@@ -27,6 +27,8 @@ public class MyInterceptor implements HandlerInterceptor {
         System.out.println("MyInterceptor preHandle.........");
         System.out.println("test!");
         System.out.println("test!");
+        System.out.println("test!");
+        System.out.println("test!");
 
         System.out.println(resource.getImageServer());
         return true;

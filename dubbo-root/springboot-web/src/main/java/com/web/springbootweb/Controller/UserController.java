@@ -24,6 +24,7 @@ public class UserController {
     @ResponseBody
     public String hello(){
 
+
         return "hello,world!!hello,dubbo!!!";
     }
     @GetMapping("getImage")

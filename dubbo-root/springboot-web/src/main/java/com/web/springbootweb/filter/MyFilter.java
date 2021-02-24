@@ -23,6 +23,8 @@ public class MyFilter implements Filter {
     public void init(FilterConfig filterConfig) throws ServletException {
 
         System.out.println("MyFilter init.......");
+        System.out.println("MyFilter init.......");
+        System.out.println("MyFilter init.......");
     }
 
     @Override
