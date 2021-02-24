@@ -1,0 +1,3 @@
+#图片路径
+resource:
+  imageServer: http://localhost:8080/dev
