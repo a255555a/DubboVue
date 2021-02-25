@@ -1,0 +1,8 @@
+com\web\springbootweb\config\MyWebMvcConfig.class
+com\web\springbootweb\interceptor\MyInterceptor.class
+com\web\springbootweb\config\Webconfig.class
+com\web\springbootweb\filter\MyFilter.class
+com\web\springbootweb\interceptor\IUserService.class
+com\web\springbootweb\Controller\UserController.class
+com\web\springbootweb\SpringbootWebApplication.class
+com\web\springbootweb\config\Resource.class
