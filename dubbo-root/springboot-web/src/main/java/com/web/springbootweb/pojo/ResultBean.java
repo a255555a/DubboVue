@@ -14,8 +14,6 @@ import javax.annotation.sql.DataSourceDefinition;
 @Data
 public class ResultBean<T> {
 
-
-
     /**
      * 做一个全局异常处理
      */

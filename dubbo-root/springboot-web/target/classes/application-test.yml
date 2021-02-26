@@ -2,3 +2,8 @@
 resource:
   imageServer: http://localhost:8080/test
 
+logging:
+  level:
+    root: warn
+  file:
+    name: /logs/
