@@ -1,0 +1,13 @@
+2021-02-25 15:50:16.611  INFO 12132 --- [restartedMain] c.w.s.SpringbootWebApplication           : Starting SpringbootWebApplication using Java 1.8.0_221 on DESKTOP-25LNI6I with PID 12132 (D:\IdeaWorkPlaces\DubboVue\dubbo-root\springboot-web\target\classes started by LY in D:\IdeaWorkPlaces\DubboVue\dubbo-root)
+2021-02-25 15:50:16.614  INFO 12132 --- [restartedMain] c.w.s.SpringbootWebApplication           : The following profiles are active: dev
+2021-02-25 15:50:16.671  INFO 12132 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-02-25 15:50:16.671  INFO 12132 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-02-25 15:50:17.700  INFO 12132 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
+2021-02-25 15:50:17.708  INFO 12132 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-02-25 15:50:17.709  INFO 12132 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-02-25 15:50:17.770  INFO 12132 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-02-25 15:50:17.770  INFO 12132 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1098 ms
+2021-02-25 15:50:17.937  INFO 12132 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-02-25 15:50:18.078  INFO 12132 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-02-25 15:50:18.106  INFO 12132 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8888 (http) with context path ''
+2021-02-25 15:50:18.115  INFO 12132 --- [restartedMain] c.w.s.SpringbootWebApplication           : Started SpringbootWebApplication in 1.917 seconds (JVM running for 7.436)
