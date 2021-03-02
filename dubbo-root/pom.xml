@@ -11,7 +11,6 @@
         <module>spring-dubbo-interface</module>
         <module>spring-dubbo-provider</module>
         <module>spring-dubbo-consumer</module>
-        <module>spring-dubbo-consumer1</module>
         <module>spring-dubbo-consumer</module>
     </modules>
 
