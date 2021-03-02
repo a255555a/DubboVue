@@ -1,5 +1,6 @@
-package com.young.user;
+package com.young;
 
+import com.young.user.IUserService;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.io.IOException;
