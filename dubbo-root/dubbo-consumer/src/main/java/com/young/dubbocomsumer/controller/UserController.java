@@ -16,12 +16,17 @@ public class UserController {
     /**
      * 细粒度的控制
      */
-    @Reference(loadbalance = "leastactive ",version = "2.0.0")
+    @Reference(version = "2.0.0",stub = "com.young.user.UserServiceImplStub",cluster = "failfast")
     private IUserService userService;
 
     @RequestMapping("hello")
     public String hello(String name){
 
+        /**
+         * 调用远程服务
+         * 有效的调用
+         * 假设name是必传参数
+         */
         return userService.hello(name);
     }
 }
