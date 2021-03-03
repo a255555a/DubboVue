@@ -17,7 +17,7 @@ class V10ProductServiceApplicationTests {
 
     @Test
     void contextLoads() {
-        Product product = productService.getById(1L);
+        Product product = productService.selectByPrimaryKey(1L);
         System.out.println(product.getName());
     }
 

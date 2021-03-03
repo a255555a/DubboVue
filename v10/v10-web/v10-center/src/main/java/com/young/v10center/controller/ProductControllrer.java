@@ -26,6 +26,8 @@ public class ProductControllrer {
     @ResponseBody
     public Product getById(@PathVariable("id") Long id){
 
-        return productService.getById(id);
+        return productService.selectByPrimaryKey(id);
     }
+
+
 }
