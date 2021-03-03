@@ -1,12 +1,13 @@
 package com.young.entity;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
 /**
  * @author LY
  */
-public class Product {
+public class Product implements Serializable {
     private Long id;
 
     private String name;

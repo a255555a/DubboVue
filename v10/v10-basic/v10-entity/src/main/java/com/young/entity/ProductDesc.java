@@ -1,9 +1,11 @@
 package com.young.entity;
 
+import java.io.Serializable;
+
 /**
  * @author LY
  */
-public class ProductDesc {
+public class ProductDesc implements Serializable {
     private Long id;
 
     private Long productId;

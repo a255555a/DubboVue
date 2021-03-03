@@ -1,10 +1,10 @@
 package com.young.v10productservice.service;
 
+import com.alibaba.dubbo.config.annotation.Service;
 import com.young.api.IProductService;
 import com.young.entity.Product;
 import com.young.mapper.ProductMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 /**
  * @Author LiuYang

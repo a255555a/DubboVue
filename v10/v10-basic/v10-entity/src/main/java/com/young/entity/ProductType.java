@@ -1,9 +1,11 @@
 package com.young.entity;
 
+import java.io.Serializable;
+
 /**
  * @author LY
  */
-public class ProductType {
+public class ProductType implements Serializable {
     private Integer id;
 
     private Integer pid;
