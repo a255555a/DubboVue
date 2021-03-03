@@ -49,4 +49,8 @@ public abstract class BaseServiceImpl<T> implements IBaseService<T> {
     public int updateByPrimaryKey(T t) {
         return getbaseDao().updateByPrimaryKey(t);
     }
+
+    public List<T> list() {
+        return getbaseDao().list();
+    }
 }

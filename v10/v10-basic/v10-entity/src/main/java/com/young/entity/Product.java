@@ -26,6 +26,10 @@ public class Product implements Serializable {
 
     private Date updateTime;
 
+    private Integer typeId;
+
+    private String typeName;
+
     public Long getId() {
         return id;
     }
@@ -98,6 +102,22 @@ public class Product implements Serializable {
         this.updateTime = updateTime;
     }
 
+    public Integer getTypeId() {
+        return typeId;
+    }
+
+    public void setTypeId(Integer typeId) {
+        this.typeId = typeId;
+    }
+
+    public String getTypeName() {
+        return typeName;
+    }
+
+    public void setTypeName(String typeName) {
+        this.typeName = typeName == null ? null : typeName.trim();
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -113,6 +133,8 @@ public class Product implements Serializable {
         sb.append(", flag=").append(flag);
         sb.append(", createTime=").append(createTime);
         sb.append(", updateTime=").append(updateTime);
+        sb.append(", typeId=").append(typeId);
+        sb.append(", typeName=").append(typeName);
         sb.append("]");
         return sb.toString();
     }

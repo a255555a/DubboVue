@@ -27,4 +27,6 @@ public interface IBaseDao<T> {
 
     int updateByPrimaryKey(T t);
 
+    List<T> list();
+
 }

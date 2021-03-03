@@ -11,7 +11,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 @EnableDubbo
 @MapperScan("com.young.mapper")
-public class V10ProductServiceApplication {
+public class  V10ProductServiceApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(V10ProductServiceApplication.class, args);

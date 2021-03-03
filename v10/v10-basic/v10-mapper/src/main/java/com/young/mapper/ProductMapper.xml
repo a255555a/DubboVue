@@ -11,6 +11,8 @@
     <result column="flag" property="flag" jdbcType="VARCHAR" />
     <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
     <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+    <result column="type_id" property="typeId" jdbcType="INTEGER" />
+    <result column="type_name" property="typeName" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -71,7 +73,8 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, name, price, sale_price, images, sale_point, flag, create_time, update_time
+    id, name, price, sale_price, images, sale_point, flag, create_time, update_time, 
+    type_id, type_name
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.young.entity.ProductExample" >
     select
@@ -87,8 +90,14 @@
       order by ${orderByClause}
     </if>
   </select>
+  <select id="list" resultMap="BaseResultMap" >
+    select
+    <include refid="Base_Column_List" />
+    from t_product
+    where flag=1
+  </select>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
-    select 
+    select
     <include refid="Base_Column_List" />
     from t_product
     where id = #{id,jdbcType=BIGINT}
@@ -106,12 +115,12 @@
   <insert id="insert" parameterType="com.young.entity.Product" >
     insert into t_product (id, name, price, 
       sale_price, images, sale_point, 
-      flag, create_time, update_time
-      )
+      flag, create_time, update_time, 
+      type_id, type_name)
     values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{price,jdbcType=DECIMAL}, 
       #{salePrice,jdbcType=DECIMAL}, #{images,jdbcType=VARCHAR}, #{salePoint,jdbcType=VARCHAR}, 
-      #{flag,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}
-      )
+      #{flag,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, 
+      #{typeId,jdbcType=INTEGER}, #{typeName,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.young.entity.Product" >
     insert into t_product
@@ -143,6 +152,12 @@
       <if test="updateTime != null" >
         update_time,
       </if>
+      <if test="typeId != null" >
+        type_id,
+      </if>
+      <if test="typeName != null" >
+        type_name,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -171,6 +186,12 @@
       </if>
       <if test="updateTime != null" >
         #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="typeId != null" >
+        #{typeId,jdbcType=INTEGER},
+      </if>
+      <if test="typeName != null" >
+        #{typeName,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -210,6 +231,12 @@
       <if test="record.updateTime != null" >
         update_time = #{record.updateTime,jdbcType=TIMESTAMP},
       </if>
+      <if test="record.typeId != null" >
+        type_id = #{record.typeId,jdbcType=INTEGER},
+      </if>
+      <if test="record.typeName != null" >
+        type_name = #{record.typeName,jdbcType=VARCHAR},
+      </if>
     </set>
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
@@ -218,14 +245,16 @@
   <update id="updateByExample" parameterType="map" >
     update t_product
     set id = #{record.id,jdbcType=BIGINT},
-      name = #{record.name,jdbcType=VARCHAR},
-      price = #{record.price,jdbcType=DECIMAL},
-      sale_price = #{record.salePrice,jdbcType=DECIMAL},
-      images = #{record.images,jdbcType=VARCHAR},
-      sale_point = #{record.salePoint,jdbcType=VARCHAR},
-      flag = #{record.flag,jdbcType=VARCHAR},
-      create_time = #{record.createTime,jdbcType=TIMESTAMP},
-      update_time = #{record.updateTime,jdbcType=TIMESTAMP}
+    name = #{record.name,jdbcType=VARCHAR},
+    price = #{record.price,jdbcType=DECIMAL},
+    sale_price = #{record.salePrice,jdbcType=DECIMAL},
+    images = #{record.images,jdbcType=VARCHAR},
+    sale_point = #{record.salePoint,jdbcType=VARCHAR},
+    flag = #{record.flag,jdbcType=VARCHAR},
+    create_time = #{record.createTime,jdbcType=TIMESTAMP},
+    update_time = #{record.updateTime,jdbcType=TIMESTAMP},
+    type_id = #{record.typeId,jdbcType=INTEGER},
+    type_name = #{record.typeName,jdbcType=VARCHAR}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -257,6 +286,12 @@
       <if test="updateTime != null" >
         update_time = #{updateTime,jdbcType=TIMESTAMP},
       </if>
+      <if test="typeId != null" >
+        type_id = #{typeId,jdbcType=INTEGER},
+      </if>
+      <if test="typeName != null" >
+        type_name = #{typeName,jdbcType=VARCHAR},
+      </if>
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
@@ -269,7 +304,9 @@
       sale_point = #{salePoint,jdbcType=VARCHAR},
       flag = #{flag,jdbcType=VARCHAR},
       create_time = #{createTime,jdbcType=TIMESTAMP},
-      update_time = #{updateTime,jdbcType=TIMESTAMP}
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      type_id = #{typeId,jdbcType=INTEGER},
+      type_name = #{typeName,jdbcType=VARCHAR}
     where id = #{id,jdbcType=BIGINT}
   </update>
 </mapper>
