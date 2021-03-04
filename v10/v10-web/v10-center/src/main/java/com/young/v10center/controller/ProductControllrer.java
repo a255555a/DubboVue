@@ -4,6 +4,7 @@ import com.alibaba.dubbo.config.annotation.Reference;
 import com.github.pagehelper.PageInfo;
 import com.young.api.IProductService;
 import com.young.entity.Product;
+import com.young.vo.ProductVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -51,11 +52,17 @@ public class ProductControllrer {
          * 获取数据
          *
          */
-
         PageInfo<Product> pageInfo = productService.page(pageIndex, pageSize);
         model.addAttribute("page",pageInfo);
         return "product/list";
     }
 
+    @RequestMapping("add")
+    public String add(ProductVO productVO){
+
+        Long aLong = productService.add(productVO);
+        //跳转回到第一页，展示的时候按添加顺序排序
+        return "/redirect:product/page/1/1";
+    }
 
 }

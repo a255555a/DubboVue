@@ -122,7 +122,7 @@
       #{flag,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, 
       #{typeId,jdbcType=INTEGER}, #{typeName,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.young.entity.Product" >
+  <insert id="insertSelective" parameterType="com.young.entity.Product" useGeneratedKeys="true" keyProperty="id">
     insert into t_product
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -143,15 +143,10 @@
       <if test="salePoint != null" >
         sale_point,
       </if>
-      <if test="flag != null" >
+
         flag,
-      </if>
-      <if test="createTime != null" >
         create_time,
-      </if>
-      <if test="updateTime != null" >
         update_time,
-      </if>
       <if test="typeId != null" >
         type_id,
       </if>
@@ -178,15 +173,9 @@
       <if test="salePoint != null" >
         #{salePoint,jdbcType=VARCHAR},
       </if>
-      <if test="flag != null" >
-        #{flag,jdbcType=VARCHAR},
-      </if>
-      <if test="createTime != null" >
-        #{createTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="updateTime != null" >
-        #{updateTime,jdbcType=TIMESTAMP},
-      </if>
+        1,
+        now(),
+       now(),
       <if test="typeId != null" >
         #{typeId,jdbcType=INTEGER},
       </if>

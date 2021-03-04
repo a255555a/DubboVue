@@ -53,4 +53,6 @@ public abstract class BaseServiceImpl<T> implements IBaseService<T> {
     public List<T> list() {
         return getbaseDao().list();
     }
+
+
 }
