@@ -13,10 +13,12 @@
 
     <dependencies>
         <!--分页插件-->
+
         <dependency>
             <groupId>com.github.pagehelper</groupId>
             <artifactId>pagehelper</artifactId>
-            <version>3.4.2</version>
+            <version>5.1.8</version>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
 </project>

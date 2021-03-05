@@ -20,7 +20,7 @@ public interface IProductService extends IBaseService<Product> {
      * @param pageSize
      * @return
      */
-    public PageInfo<Product> page(Integer pageIndex,Integer pageSize);
+    //public PageInfo<Product> page(Integer pageIndex,Integer pageSize);
 
     /**
      * 添加商品

@@ -1,5 +1,8 @@
 package com.young.base;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
+
 import java.util.List;
 
 /**
@@ -52,6 +55,18 @@ public abstract class BaseServiceImpl<T> implements IBaseService<T> {
 
     public List<T> list() {
         return getbaseDao().list();
+    }
+
+    public PageInfo<T> page(Integer pageIndex, Integer pageSize) {
+        /**
+         * 1、设置分页信息
+         * 2、获取集合信息 limit
+         * 3、返回分页对象
+         */
+        PageHelper.startPage(pageIndex, pageSize);
+        List<T> list = this.list();
+        PageInfo<T> pageInfo = new PageInfo<T>(list, 3);
+        return pageInfo;
     }
 
 

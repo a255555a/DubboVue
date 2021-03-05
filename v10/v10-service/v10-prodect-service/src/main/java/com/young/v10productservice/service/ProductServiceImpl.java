@@ -32,18 +32,18 @@ public class ProductServiceImpl extends BaseServiceImpl<Product> implements IPro
         return productMapper;
     }
 
-    @Override
-    public PageInfo<Product> page(Integer pageIndex, Integer pageSize) {
-        /**
-         * 1、设置分页信息
-         * 2、获取集合信息 limit
-         * 3、返回分页对象
-         */
-        PageHelper.startPage(pageIndex, pageSize);
-        List<Product> list = this.list();
-        PageInfo<Product> pageInfo = new PageInfo<Product>(list, 3);
-        return pageInfo;
-    }
+//    @Override
+//    public PageInfo<Product> page(Integer pageIndex, Integer pageSize) {
+//        /**
+//         * 1、设置分页信息
+//         * 2、获取集合信息 limit
+//         * 3、返回分页对象
+//         */
+//        PageHelper.startPage(pageIndex, pageSize);
+//        List<Product> list = this.list();
+//        PageInfo<Product> pageInfo = new PageInfo<Product>(list, 3);
+//        return pageInfo;
+//    }
 
     @Override
     public Long add(ProductVO productVO) {
